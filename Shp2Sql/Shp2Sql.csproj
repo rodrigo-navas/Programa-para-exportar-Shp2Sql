@@ -38,10 +38,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GeoAPI">
-      <HintPath>..\..\..\..\UPPERCASE\Projeto CART\ITS Sistema\Dependências\GeoAPI.dll</HintPath>
+      <HintPath>Dependencias\GeoAPI.dll</HintPath>
     </Reference>
     <Reference Include="NetTopologySuite">
-      <HintPath>..\..\..\..\UPPERCASE\Projeto CART\ITS Sistema\Dependências\NetTopologySuite.dll</HintPath>
+      <HintPath>Dependencias\NetTopologySuite.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -99,6 +99,10 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dependencias\GeoAPI.dll" />
+    <Content Include="Dependencias\NetTopologySuite.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
