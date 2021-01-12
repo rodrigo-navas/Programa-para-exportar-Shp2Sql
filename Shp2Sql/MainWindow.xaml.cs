@@ -25,10 +25,10 @@ namespace Shp2Sql
             string nomeTabela = this.RetornarNomeTabela(file);
 
             StringBuilder sbInsert = new StringBuilder();
-            sbInsert.Append(String.Format("INSERT INTO [{0}] (", nomeTabela));
+            sbInsert.Append(String.Format("INSERT INTO {0} (", nomeTabela));
 
             for (int index = 0; index < shapefileDataReader.DbaseHeader.NumFields; index++)
-                sbInsert.Append(String.Format("       {0},", shapefileDataReader.DbaseHeader.Fields[index].Name.ToUpper()));
+                sbInsert.Append(String.Format("       [{0}],", shapefileDataReader.DbaseHeader.Fields[index].Name.ToUpper()));
 
             sbInsert.Append("       GEO");
             sbInsert.Append(") VALUES (");
@@ -67,7 +67,7 @@ namespace Shp2Sql
             sbCreate.Append("       ID INT IDENTITY NOT NULL,");
 
             for (int index = 0; index < shapefileDataReader.DbaseHeader.NumFields; index++)
-                sbCreate.Append(String.Format("       {0} NVARCHAR(MAX),", shapefileDataReader.DbaseHeader.Fields[index].Name.ToUpper()));
+                sbCreate.Append(String.Format("       [{0}] NVARCHAR(MAX),", shapefileDataReader.DbaseHeader.Fields[index].Name.ToUpper()));
 
             sbCreate.Append("       GEO GEOMETRY");
             sbCreate.Append(")");
